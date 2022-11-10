@@ -66,7 +66,7 @@ public class ControllerProduct {
     public String DeleteProduct(Model model, @PathVariable("id") long id) {
 
         try{
-            model.addAttribute("product", this.SvcProduct.findById(id));
+            this.SvcProduct.deleteById(id);
             return "/products";
         }
             catch (Exception e) {
