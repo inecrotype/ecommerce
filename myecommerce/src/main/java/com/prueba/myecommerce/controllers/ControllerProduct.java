@@ -30,7 +30,7 @@ public class ControllerProduct {
         }
     }
 
-    @GetMapping("products/create")
+    @PostMapping("products/create")
     public String CreateProduct(Model model, @PathVariable("id") long id) {
         try {
             if (id == 0) {
@@ -45,7 +45,7 @@ public class ControllerProduct {
         return "/index";
     }
 
-    @PostMapping("products/update")
+    @PutMapping("products/update")
     public String UpdateProduct(@ModelAttribute("products") Product product, Model model, @PathVariable("id") long id)
     {
         try {
@@ -62,7 +62,7 @@ public class ControllerProduct {
 
 
    }
-    @GetMapping("/products/{id}")
+    @DeleteMapping("/products/{id}")
     public String DeleteProduct(Model model, @PathVariable("id") long id) {
 
         try{
